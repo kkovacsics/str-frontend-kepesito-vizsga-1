@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Contributor } from 'src/app/model/contributor';
+import { ContributorService } from 'src/app/service/contributor.service';
 
 @Component({
   selector: 'app-list',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  list$: Observable<Contributor[]> = this.contributor.getContributors();
+  
+  constructor(
+    private contributor: ContributorService,
+  ) { }
 
   ngOnInit(): void {
   }

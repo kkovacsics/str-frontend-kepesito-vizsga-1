@@ -1,46 +1,17 @@
 <div class="container-lg">
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 py-2">
-            <div class="card p-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 py-2" *ngFor="let contributor of list$ | async">
+            <div class="card p-3 rounded-3">
                 <div class="d-flex justify-content-between">
-                    <img src="https://avatars.githubusercontent.com/u/15655?v=4" alt="" style="width: 128px">
+                    <img [src]="contributor.avatar_url" alt="" style="width: 128px">
                     <i class="fa fa-crosshairs fa-2x" aria-hidden="true"></i>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">petebacondarwin</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">1681 commits</h6>
-                    <div class="text-center">
+                    <h5 class="card-title">{{contributor.login}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{contributor.contributions}} commits</h6>
+                    <div class="text-center mt-4">
                         <button class="btn btn-outline-primary">VIEW REPOSITORIES</button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 py-2">
-            <div class="card">
-                <img src="https://avatars.githubusercontent.com/u/8604205?v=4" alt="" style="width: 128px">
-                <div class="card-body">
-                    <h5 class="card-title">petebacondarwin</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">1681 commits</h6>
-                    <div class="text-center">
-                        <button class="btn btn-outline-primary">VIEW REPOSITORIES</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 py-2">
-            <div class="card">
-                <img src="https://avatars.githubusercontent.com/u/216296?v=4" alt="" style="width: 128px">
-                <div class="card-body">
-                    <h5 class="card-title">petebacondarwin</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">1681 commits</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">petebacondarwin</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">1681 commits</h6>
                 </div>
             </div>
         </div>
