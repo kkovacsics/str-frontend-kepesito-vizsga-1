@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ListComponent } from './page/list/list.component';
+import { ContributorsComponent } from './page/contributors/contributors.component';
+import { RepositoriesComponent } from './page/repositories/repositories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ContributorsComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,

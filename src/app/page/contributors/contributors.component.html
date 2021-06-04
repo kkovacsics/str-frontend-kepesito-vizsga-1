@@ -1,6 +1,6 @@
 <div class="container-lg">
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 py-2" *ngFor="let contributor of list$ | async">
+        <div class="col-lg-3 col-md-4 col-sm-6 py-2" *ngFor="let contributor of contributors$ | async">
             <div class="card p-3 rounded-3">
                 <div class="d-flex justify-content-between">
                     <img [src]="contributor.avatar_url" alt="" style="width: 128px">
@@ -10,7 +10,9 @@
                     <h5 class="card-title">{{contributor.login}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{contributor.contributions}} commits</h6>
                     <div class="text-center mt-4">
-                        <button class="btn btn-outline-primary">VIEW REPOSITORIES</button>
+                        <button class="btn btn-outline-primary" [routerLink]="['repository', contributor.login]">
+                            VIEW REPOSITORIES
+                        </button>
                     </div>
                 </div>
             </div>

@@ -4,13 +4,13 @@ import { Contributor } from 'src/app/model/contributor';
 import { ContributorService } from 'src/app/service/contributor.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-contributors',
+  templateUrl: './contributors.component.html',
+  styleUrls: ['./contributors.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ContributorsComponent implements OnInit {
 
-  list$: Observable<Contributor[]> = this.contributor.getContributors();
+  contributors$: Observable<Contributor[]> = this.contributor.getContributors();
   
   constructor(
     private contributor: ContributorService,

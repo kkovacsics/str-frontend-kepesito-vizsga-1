@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './page/list/list.component';
+import { ContributorsComponent } from './page/contributors/contributors.component';
+import { RepositoriesComponent } from './page/repositories/repositories.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListComponent
+    component: ContributorsComponent
+  },
+  {
+    path: 'repository/:login',
+    component: RepositoriesComponent
   },
   {
     path: '**',
