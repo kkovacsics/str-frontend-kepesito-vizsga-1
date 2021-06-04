@@ -12,6 +12,7 @@ import { RepositoryService } from 'src/app/service/repository.service';
 export class RepositoriesComponent implements OnInit {
 
   repositories$: Observable<Repository[]> = new Observable();
+  login = "";
 
   constructor(
     private repository: RepositoryService,
@@ -21,8 +22,10 @@ export class RepositoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
-      param => this.repositories$ = this.repository.getRepositories(param.login)
-    )
+      param => {
+        this.login = param.login;
+        this.repositories$ = this.repository.getRepositories(param.login);
+    })
   }
 
   onSubmit(): void {

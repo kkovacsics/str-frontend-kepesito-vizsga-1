@@ -1,1 +1,29 @@
-<p>repositories works!</p>
+<div class="row">
+    <div class="col-12 my-3 d-flex justify-content-between">
+        <h4>Repository list - {{login}}</h4>
+        <button type="button" class="btn-close" [routerLink]="['/']"></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Fork</th>
+                    <th>Stargazer</th>
+                    <th>Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let repository of repositories$ | async">
+                    <td>{{ repository.name }}</td>
+                    <td>{{ repository.fork }}</td>
+                    <td>{{ repository.stargazers_count }}</td>
+                    <td>{{ repository.updated_at }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
