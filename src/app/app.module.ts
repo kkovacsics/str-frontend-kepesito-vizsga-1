@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ContributorsComponent } from './page/contributors/contributors.component';
 import { RepositoriesComponent } from './page/repositories/repositories.component';
+import { SorterPipe } from './pipe/sorter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContributorsComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    SorterPipe
   ],
   imports: [
     BrowserModule,

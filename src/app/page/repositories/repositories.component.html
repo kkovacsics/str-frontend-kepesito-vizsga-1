@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let repository of repositories$ | async">
+                <tr *ngFor="let repository of repositories$ | async | sorter">
                     <td>{{ repository.name }}</td>
                     <td>{{ repository.fork }}</td>
                     <td>{{ repository.stargazers_count }}</td>

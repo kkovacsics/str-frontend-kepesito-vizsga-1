@@ -28,9 +28,4 @@ export class RepositoriesComponent implements OnInit {
     })
   }
 
-  onSubmit(): void {
-    this.router.navigate(['/']);
-  }
-
-
 }
